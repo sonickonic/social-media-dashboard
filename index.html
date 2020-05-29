@@ -1,87 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">Social Media Dashboard</h1>
+        <p class="header__p">Total Followers: 23,004</p>
+      </div>
+      <div class="container container--border">
+        <p class="header__p">Dark Mode</p>
+        <div class="container">
+          <input class="checkbox" type="checkbox" id="toggle" />
+          <label class="switch" for="toggle">Toggle</label>
+        </div>
+      </div>
+    </header>
 
-  Social Media Dashboard
-  Total Followers: 23,004
+    <main class="main">
+      <div class="main__container">
+        <div class="card card--facebook">
+          <span class="card__handle card__handle--facebook">@nathanf</span>
+          <h3 class="card__followers-total">1987</h3>
+          <span class="card__text">Followers</span>
+          <span class="card__statistic">12 Today</span>
+        </div>
 
-  Dark Mode
+        <div class="card card--twitter">
+          <span class="card__handle card__handle--twitter">@nathanf</span>
+          <h3 class="card__followers-total">1044</h3>
+          <span class="card__text">Followers</span>
+          <span class="card__statistic">99 Today</span>
+        </div>
 
-  
+        <div class="card card--instagram">
+          <span class="card__handle card__handle--instagram">@realnathanf</span>
+          <h3 class="card__followers-total">11k</h3>
+          <span class="card__text">Followers</span>
+          <span class="card__statistic">1099 Today</span>
+        </div>
 
-  @nathanf
-  1987
-  Followers
-  12 Today
+        <div class="card card--youtube">
+          <span class="card__handle card__handle--youtube">Nathan F.</span>
+          <h3 class="card__followers-total">8239</h3>
+          <span class="card__text">Subscribers</span>
+          <span class="card__statistic card__statistic--negative"
+            >144 Today</span
+          >
+        </div>
+      </div>
 
-  @nathanf
-  1044
-  Followers
-  99 Today
+      <h2 class="main__title">Overview - Today</h2>
 
-  @realnathanf
-  11k
-  Followers
-  1099 Today
+      <div class="main__container">
+        <div class="ticket">
+          <span class="ticket__text ticket__text--facebook">Page Views</span>
+          <span class="ticket__followers-value">87</span>
+          <span class="ticket__statistic card__statistic">3%</span>
+        </div>
 
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
+        <div class="ticket">
+          <span class="ticket__text ticket__text--facebook">Likes</span>
+          <span class="ticket__followers-value">52</span>
+          <span
+            class="ticket__statistic card__statistic card__statistic--negative"
+            >2%</span
+          >
+        </div>
 
+        <div class="ticket">
+          <span class="ticket__text ticket__text--instagram">Likes</span>
+          <span class="ticket__followers-value">5462</span>
+          <span class="ticket__statistic card__statistic">2257%</span>
+        </div>
 
+        <div class="ticket">
+          <span class="ticket__text ticket__text--instagram"
+            >Profile Views</span
+          >
+          <span class="ticket__followers-value">52k</span>
+          <span class="ticket__statistic card__statistic">1375%</span>
+        </div>
 
-  Overview - Today
+        <div class="ticket">
+          <span class="ticket__text ticket__text--twitter">Retweets</span>
+          <span class="ticket__followers-value">117</span>
+          <span class="ticket__statistic card__statistic">303%</span>
+        </div>
 
-  Page Views
-  87
-  3%
+        <div class="ticket">
+          <span class="ticket__text ticket__text--twitter">Likes</span>
+          <span class="ticket__followers-value">507</span>
+          <span class="ticket__statistic card__statistic">553%</span>
+        </div>
 
-  Likes
-  52
-  2%
+        <div class="ticket">
+          <span class="ticket__text ticket__text--youtube">Likes</span>
+          <span class="ticket__followers-value">107</span>
+          <span
+            class="ticket__statistic card__statistic card__statistic--negative"
+            >19%</span
+          >
+        </div>
 
-  Likes
-  5462
-  2257%
+        <div class="ticket">
+          <span class="ticket__text ticket__text--youtube">Total Views</span>
+          <span class="ticket__followers-value">1407</span>
+          <span class="ticket__statistic card__statistic">12%</span>
+        </div>
+      </div>
 
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/sonickonic">sonickonic</a>.
+      </div>
+    </main>
+  </body>
 </html>
