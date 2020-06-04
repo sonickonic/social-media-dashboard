@@ -1,0 +1,17 @@
+.header {
+  background-color: $dark-header-background;
+  padding: 2rem 6.5%;
+  border-radius: 0 0 1em 1em;
+}
+
+@include screen-l {
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    height: 15rem;
+    width: 69rem;
+    padding: 2rem 0;
+    margin: auto;
+  }
+}

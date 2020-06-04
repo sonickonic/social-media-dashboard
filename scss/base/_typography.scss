@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: white;
+  line-height: 1.666;
+}
+
+.header {
+  &__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.8px;
+  }
+
+  &__p {
+    letter-spacing: 0.8px;
+    color: $light-text;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+}
+
+.main {
+  &__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+.card {
+  text-align: center;
+
+  &__handle {
+    font-size: 0.8rem;
+    color: $light-text;
+  }
+
+  &__followers-total {
+    font-size: 3.333rem;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    color: $light-text;
+  }
+
+  &__statistic {
+    color: $green;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  &__statistic--negative {
+    color: $red;
+  }
+}
+
+.ticket {
+  text-align: left;
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: $light-text;
+  }
+
+  &__followers-value {
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__statistic {
+    text-align: right;
+  }
+}
+
+@include screen-l {
+  .header {
+    &__title {
+      font-size: 1.65rem;
+      letter-spacing: 0.8px;
+    }
+  }
+}

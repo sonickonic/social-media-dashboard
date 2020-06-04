@@ -1,0 +1,43 @@
+.checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch {
+  cursor: pointer;
+  text-indent: -9999px;
+  display: inline-block;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  background-image: $dark-toggle;
+  border-radius: 1.5em;
+}
+
+.switch:after {
+  content: "";
+  position: absolute;
+  height: 1.125em;
+  width: 1.125em;
+  border-radius: 50%;
+  left: 0.214em;
+  bottom: 0.214em;
+  background-color: $dark-card-background;
+  transition: all 0.3s;
+}
+
+.checkbox:checked + .switch:after {
+  background-color: $white;
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.checkbox:checked + .switch {
+  background-image: none;
+  background-color: $toggle;
+}
+
+.switch:active:after {
+  width: 1.5em;
+}

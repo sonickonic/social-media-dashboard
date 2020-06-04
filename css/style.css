@@ -1,0 +1,369 @@
+/* utilities */
+/* base */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: white;
+  line-height: 1.666;
+}
+
+.header__title {
+  font-size: 1.4rem;
+  letter-spacing: 0.8px;
+}
+.header__p {
+  letter-spacing: 0.8px;
+  color: #8b97c6;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.main__title {
+  font-size: 1.4rem;
+  letter-spacing: 0.8px;
+}
+
+.card {
+  text-align: center;
+}
+.card__handle {
+  font-size: 0.8rem;
+  color: #8b97c6;
+}
+.card__followers-total {
+  font-size: 3.333rem;
+}
+.card__text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+  color: #8b97c6;
+}
+.card__statistic {
+  color: #1db489;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.card__statistic--negative {
+  color: #dc414c;
+}
+
+.ticket {
+  text-align: left;
+}
+.ticket__text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #8b97c6;
+}
+.ticket__followers-value {
+  line-height: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.ticket__statistic {
+  text-align: right;
+}
+
+@media (min-width: 1200px) {
+  .header__title {
+    font-size: 1.65rem;
+    letter-spacing: 0.8px;
+  }
+}
+/* blocks */
+body {
+  background-color: #1e202a;
+}
+
+.header {
+  background-color: #1f212e;
+  padding: 2rem 6.5%;
+  border-radius: 0 0 1em 1em;
+}
+
+@media (min-width: 1200px) {
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    height: 15rem;
+    width: 69rem;
+    padding: 2rem 0;
+    margin: auto;
+  }
+}
+.checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch {
+  cursor: pointer;
+  text-indent: -9999px;
+  display: inline-block;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  background-image: linear-gradient(to top right, #378fe6, #3eda82);
+  border-radius: 1.5em;
+}
+
+.switch:after {
+  content: "";
+  position: absolute;
+  height: 1.125em;
+  width: 1.125em;
+  border-radius: 50%;
+  left: 0.214em;
+  bottom: 0.214em;
+  background-color: #252a41;
+  transition: all 0.3s;
+}
+
+.checkbox:checked + .switch:after {
+  background-color: white;
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.checkbox:checked + .switch {
+  background-image: none;
+  background-color: #aeb3cb;
+}
+
+.switch:active:after {
+  width: 1.5em;
+}
+
+.container {
+  margin-bottom: 2.8em;
+}
+
+.container--border {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid 1px #8b97c6;
+  padding-top: 1.1em;
+  margin-top: 1.3em;
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .container--border {
+    border-top: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    justify-content: space-between;
+    margin: 0;
+  }
+}
+.main {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  margin-top: -2rem;
+}
+.main__title {
+  padding: 4.5% 6.5%;
+}
+
+@media (min-width: 600px) {
+  .main__container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 16rem);
+    grid-template-rows: auto;
+    row-gap: 1.8rem;
+    column-gap: 1.8rem;
+    margin-bottom: 2.666em;
+  }
+}
+@media (min-width: 1200px) {
+  .main {
+    margin-top: -6.45rem;
+  }
+  .main__container {
+    grid-template-columns: repeat(4, 16rem);
+  }
+  .main__title {
+    display: flex;
+    justify-content: space-between;
+    width: 69rem;
+    padding: 0 0 2rem 0;
+    margin: auto;
+  }
+}
+.card {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #252a41;
+  width: 87%;
+  max-width: 20.5rem;
+  margin: auto;
+  padding: 1.5em 0;
+  margin-bottom: 1.7em;
+  border-radius: 0 0 0.333em 0.333em;
+  transition: ease-in-out 0.2s;
+}
+.card__handle {
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.card__handle::before {
+  position: relative;
+  top: 0.333rem;
+  left: -0.4rem;
+  margin-left: 0.4rem;
+}
+.card__handle--facebook::before {
+  content: url(../../images/icon-facebook.svg);
+}
+.card__handle--twitter::before {
+  content: url(../../images/icon-twitter.svg);
+}
+.card__handle--instagram::before {
+  content: url(../../images/icon-instagram.svg);
+}
+.card__handle--youtube::before {
+  content: url(../../images/icon-youtube.svg);
+}
+.card__text {
+  margin-top: -0.9rem;
+}
+.card__statistic {
+  position: relative;
+  margin-top: 1.2rem;
+}
+.card__statistic::before, .card__statistic--negative::before {
+  position: relative;
+  content: url(../../images/icon-up.svg);
+  top: -0.2rem;
+  left: -0.333rem;
+  margin-left: 0.3rem;
+}
+.card__statistic--negative::before {
+  content: url(../../images/icon-down.svg);
+}
+
+.card--facebook::after,
+.card--twitter::after,
+.card--instagram::after,
+.card--youtube::after {
+  position: absolute;
+  top: -4px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  content: "";
+  z-index: -1;
+  border-radius: 0.333em;
+}
+
+.card--facebook::after {
+  background: deepskyblue;
+}
+
+.card--twitter::after {
+  background: #1ca0f2;
+}
+
+.card--instagram::after {
+  background: linear-gradient(to top right, #fdc468, #df4996);
+}
+
+.card--youtube::after {
+  background: #c4032a;
+}
+
+.card:hover {
+  background-color: #2e3552;
+}
+
+@media (min-width: 600px) {
+  .card {
+    width: 100%;
+    max-width: 16rem;
+    margin: 0;
+  }
+}
+.ticket {
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.5rem 2.5rem;
+  grid-template-areas: "text icon" "value statistic";
+  background-color: #252a41;
+  width: 87%;
+  max-width: 20.5rem;
+  margin: auto;
+  padding: 1.5em;
+  margin-bottom: 1rem;
+  border-radius: 0.333em;
+  transition: ease-in-out 0.2s;
+}
+.ticket__text {
+  grid-area: text;
+  align-self: start;
+}
+.ticket__text::after {
+  grid-area: icon;
+  position: absolute;
+  right: 0;
+  top: 0.133rem;
+}
+.ticket__text--facebook::after {
+  content: url(../../images/icon-facebook.svg);
+}
+.ticket__text--twitter::after {
+  content: url(../../images/icon-twitter.svg);
+}
+.ticket__text--instagram::after {
+  content: url(../../images/icon-instagram.svg);
+}
+.ticket__text--youtube::after {
+  content: url(../../images/icon-youtube.svg);
+}
+.ticket__followers-value {
+  grid-area: value;
+  align-self: end;
+}
+.ticket__statistic {
+  grid-area: statistic;
+  align-self: end;
+  margin-top: 0;
+}
+
+.ticket:hover {
+  background-color: #2e3552;
+}
+
+@media (min-width: 600px) {
+  .ticket {
+    width: 100%;
+    max-width: 16rem;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

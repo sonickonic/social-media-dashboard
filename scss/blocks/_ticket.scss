@@ -1,0 +1,71 @@
+.ticket {
+  position: relative;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.5rem 2.5rem;
+  grid-template-areas:
+    "text icon"
+    "value statistic";
+
+  background-color: $dark-card-background;
+  width: 87%;
+  max-width: 20.5rem;
+  margin: auto;
+  padding: 1.5em;
+  margin-bottom: 1rem;
+  border-radius: 0.333em;
+  transition: ease-in-out 0.2s;
+
+  &__text {
+    grid-area: text;
+    align-self: start;
+  }
+
+  &__text::after {
+    grid-area: icon;
+    position: absolute;
+    right: 0;
+    top: 0.133rem;
+  }
+
+  &__text--facebook::after {
+    content: url(../../images/icon-facebook.svg);
+  }
+
+  &__text--twitter::after {
+    content: url(../../images/icon-twitter.svg);
+  }
+
+  &__text--instagram::after {
+    content: url(../../images/icon-instagram.svg);
+  }
+
+  &__text--youtube::after {
+    content: url(../../images/icon-youtube.svg);
+  }
+
+  &__followers-value {
+    grid-area: value;
+    align-self: end;
+  }
+
+  &__statistic {
+    grid-area: statistic;
+    align-self: end;
+    margin-top: 0;
+  }
+}
+
+.ticket:hover {
+  background-color: lighten($dark-card-background, $amount: 5);
+}
+
+@include screen-m {
+  .ticket {
+    width: 100%;
+    max-width: 16rem;
+    margin: 0;
+  }
+}

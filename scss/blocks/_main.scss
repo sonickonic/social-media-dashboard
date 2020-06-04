@@ -1,0 +1,41 @@
+.main {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  margin-top: -2rem;
+
+  &__title {
+    padding: 4.5% 6.5%;
+  }
+}
+
+@include screen-m {
+  .main {
+    &__container {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, 16rem);
+      grid-template-rows: auto;
+      row-gap: 1.8rem;
+      column-gap: 1.8rem;
+      margin-bottom: 2.666em;
+    }
+  }
+}
+
+@include screen-l {
+  .main {
+    margin-top: -6.45rem;
+    &__container {
+      grid-template-columns: repeat(4, 16rem);
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      width: 69rem;
+      padding: 0 0 2rem 0;
+      margin: auto;
+    }
+  }
+}

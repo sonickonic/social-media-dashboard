@@ -1,0 +1,28 @@
+.container {
+  margin-bottom: 2.8em;
+}
+
+.container--border {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid 1px $light-text;
+  padding-top: 1.1em;
+  margin-top: 1.3em;
+  margin-bottom: 0;
+}
+
+@include screen-l {
+  .container--border {
+    border-top: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@include screen-l {
+  .container {
+    justify-content: space-between;
+    margin: 0;
+  }
+}
