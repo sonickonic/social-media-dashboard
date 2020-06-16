@@ -1,28 +1,70 @@
 /* utilities */
-/* base */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+html {
+  --green: hsl(163, 72%, 41%);
+  --red: hsl(356, 69%, 56%);
+  --white: hsl(0, 0%, 100%);
+  --facebook-color: hsl(195, 100%, 50%);
+  --twitter-color: hsl(203, 89%, 53%);
+  --instagram-color: linear-gradient(
+    to top right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  --youtube-color: hsl(348, 97%, 39%);
+  --toggle: linear-gradient(
+    to top right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --hover-toggle: hsl(228, 28%, 30%);
+  --background: hsl(230, 17%, 14%);
+  --header-background: hsl(232, 19%, 15%);
+  --card-background: hsl(228, 28%, 20%);
+  --hover: hsl(228, 28%, 30%);
+  --secondary-color-text: hsl(228, 34%, 66%);
+  --color-text: hsl(0, 0%, 100%);
+}
+
+html[data-theme=light] {
+  --toggle: hsl(230, 22%, 74%);
+  --hover-toggle: hsl(227, 47%, 96%);
+  --background: hsl(0, 0%, 100%);
+  --header-background: hsl(225, 100%, 98%);
+  --card-background: hsl(227, 47%, 96%);
+  --hover: hsl(230, 22%, 90%);
+  --secondary-color-text: hsl(228, 12%, 44%);
+  --color-text: hsl(230, 17%, 14%);
+}
+
+/* base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-family: "Inter", sans-serif;
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
 }
 
-body {
-  color: white;
+html {
+  font-family: "Inter", sans-serif;
   line-height: 1.666;
 }
 
 .header__title {
   font-size: 1.4rem;
   letter-spacing: 0.8px;
+  color: var(--color-text);
 }
 .header__p {
   letter-spacing: 0.8px;
-  color: #8b97c6;
+  color: var(--secondary-color-text);
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -37,9 +79,11 @@ body {
 }
 .card__handle {
   font-size: 0.8rem;
-  color: #8b97c6;
+  font-weight: 700;
+  color: var(--secondary-color-text);
 }
 .card__followers-total {
+  color: var(--color-text);
   font-size: 3.333rem;
 }
 .card__text {
@@ -47,15 +91,15 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 400;
-  color: #8b97c6;
+  color: var(--secondary-color-text);
 }
 .card__statistic {
-  color: #1db489;
+  color: var(--green);
   font-weight: 700;
   font-size: 0.8rem;
 }
 .card__statistic--negative {
-  color: #dc414c;
+  color: var(--red);
 }
 
 .ticket {
@@ -63,10 +107,11 @@ body {
 }
 .ticket__text {
   font-size: 0.875rem;
-  font-weight: 400;
-  color: #8b97c6;
+  font-weight: 700;
+  color: var(--secondary-color-text);
 }
 .ticket__followers-value {
+  color: var(--color-text);
   line-height: 1;
   font-size: 2rem;
   font-weight: 700;
@@ -83,24 +128,33 @@ body {
 }
 /* blocks */
 body {
-  background-color: #1e202a;
+  background-color: var(--background);
 }
 
 .header {
-  background-color: #1f212e;
+  background-color: var(--header-background);
   padding: 2rem 6.5%;
   border-radius: 0 0 1em 1em;
 }
 
+@media (min-width: 600px) {
+  .header__container {
+    width: 33.8rem;
+    margin: auto;
+  }
+}
 @media (min-width: 1200px) {
   .header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
     height: 15rem;
-    width: 69rem;
     padding: 2rem 0;
     margin: auto;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+    width: 69rem;
   }
 }
 .checkbox {
@@ -116,7 +170,7 @@ body {
   position: relative;
   width: 3em;
   height: 1.5em;
-  background-image: linear-gradient(to top right, #378fe6, #3eda82);
+  background-image: var(--toggle);
   border-radius: 1.5em;
 }
 
@@ -128,19 +182,27 @@ body {
   border-radius: 50%;
   left: 0.214em;
   bottom: 0.214em;
-  background-color: #252a41;
-  transition: all 0.3s;
+  background-color: var(--card-background);
+  transition: all 300ms ease-out;
+}
+
+.switch:hover:after {
+  background-color: var(--hover-toggle);
 }
 
 .checkbox:checked + .switch:after {
-  background-color: white;
   left: calc(100% - 3px);
   transform: translateX(-100%);
 }
 
 .checkbox:checked + .switch {
   background-image: none;
-  background-color: #aeb3cb;
+  background-color: var(--toggle);
+}
+
+.checkbox:hover:checked + .switch {
+  transition: ease-out 1000ms;
+  background-image: linear-gradient(to top right, #378fe6, #3eda82);
 }
 
 .switch:active:after {
@@ -155,7 +217,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: solid 1px #8b97c6;
+  border-top: solid 1px var(--secondary-color-text);
   padding-top: 1.1em;
   margin-top: 1.3em;
   margin-bottom: 0;
@@ -185,6 +247,11 @@ body {
 }
 
 @media (min-width: 600px) {
+  .main__title {
+    width: 33.8rem;
+    margin: auto;
+    padding: 4.5% 0;
+  }
   .main__container {
     display: grid;
     justify-content: center;
@@ -216,14 +283,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #252a41;
+  background-color: var(--card-background);
   width: 87%;
   max-width: 20.5rem;
   margin: auto;
   padding: 1.5em 0;
   margin-bottom: 1.7em;
   border-radius: 0 0 0.333em 0.333em;
-  transition: ease-in-out 0.2s;
+  transition: background-color 300ms ease-out;
 }
 .card__handle {
   margin-bottom: 0.5em;
@@ -236,16 +303,16 @@ body {
   margin-left: 0.4rem;
 }
 .card__handle--facebook::before {
-  content: url(../../images/icon-facebook.svg);
+  content: url(../images/icon-facebook.svg);
 }
 .card__handle--twitter::before {
-  content: url(../../images/icon-twitter.svg);
+  content: url(../images/icon-twitter.svg);
 }
 .card__handle--instagram::before {
-  content: url(../../images/icon-instagram.svg);
+  content: url(../images/icon-instagram.svg);
 }
 .card__handle--youtube::before {
-  content: url(../../images/icon-youtube.svg);
+  content: url(../images/icon-youtube.svg);
 }
 .card__text {
   margin-top: -0.9rem;
@@ -256,19 +323,15 @@ body {
 }
 .card__statistic::before, .card__statistic--negative::before {
   position: relative;
-  content: url(../../images/icon-up.svg);
+  content: url(../images/icon-up.svg);
   top: -0.2rem;
   left: -0.333rem;
   margin-left: 0.3rem;
 }
 .card__statistic--negative::before {
-  content: url(../../images/icon-down.svg);
+  content: url(../images/icon-down.svg);
 }
-
-.card--facebook::after,
-.card--twitter::after,
-.card--instagram::after,
-.card--youtube::after {
+.card--facebook::after, .card--twitter::after, .card--instagram::after, .card--youtube::after {
   position: absolute;
   top: -4px;
   bottom: 0px;
@@ -278,25 +341,21 @@ body {
   z-index: -1;
   border-radius: 0.333em;
 }
-
 .card--facebook::after {
-  background: deepskyblue;
+  background: var(--facebook-color);
 }
-
 .card--twitter::after {
-  background: #1ca0f2;
+  background: var(--twitter-color);
 }
-
 .card--instagram::after {
-  background: linear-gradient(to top right, #fdc468, #df4996);
+  background: var(--instagram-color);
 }
-
 .card--youtube::after {
-  background: #c4032a;
+  background: var(--youtube-color);
 }
 
 .card:hover {
-  background-color: #2e3552;
+  background-color: var(--hover);
 }
 
 @media (min-width: 600px) {
@@ -313,7 +372,7 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 2.5rem 2.5rem;
   grid-template-areas: "text icon" "value statistic";
-  background-color: #252a41;
+  background-color: var(--card-background);
   width: 87%;
   max-width: 20.5rem;
   margin: auto;
@@ -333,16 +392,16 @@ body {
   top: 0.133rem;
 }
 .ticket__text--facebook::after {
-  content: url(../../images/icon-facebook.svg);
+  content: url(../images/icon-facebook.svg);
 }
 .ticket__text--twitter::after {
-  content: url(../../images/icon-twitter.svg);
+  content: url(../images/icon-twitter.svg);
 }
 .ticket__text--instagram::after {
-  content: url(../../images/icon-instagram.svg);
+  content: url(../images/icon-instagram.svg);
 }
 .ticket__text--youtube::after {
-  content: url(../../images/icon-youtube.svg);
+  content: url(../images/icon-youtube.svg);
 }
 .ticket__followers-value {
   grid-area: value;
@@ -355,7 +414,7 @@ body {
 }
 
 .ticket:hover {
-  background-color: #2e3552;
+  background-color: var(--hover);
 }
 
 @media (min-width: 600px) {

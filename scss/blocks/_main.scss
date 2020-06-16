@@ -11,6 +11,12 @@
 
 @include screen-m {
   .main {
+    &__title {
+      width: 33.8rem;
+      margin: auto;
+      padding: 4.5% 0;
+    }
+
     &__container {
       display: grid;
       justify-content: center;

@@ -4,41 +4,41 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: $dark-card-background;
+  background-color: var(--card-background);
   width: 87%;
   max-width: 20.5rem;
   margin: auto;
   padding: 1.5em 0;
   margin-bottom: 1.7em;
   border-radius: 0 0 0.333em 0.333em;
-  transition: ease-in-out 0.2s;
+  transition: background-color 300ms ease-out;
 
   &__handle {
     margin-bottom: 0.5em;
     position: relative;
-  }
 
-  &__handle::before {
-    position: relative;
-    top: 0.333rem;
-    left: -0.4rem;
-    margin-left: 0.4rem;
-  }
+    &::before {
+      position: relative;
+      top: 0.333rem;
+      left: -0.4rem;
+      margin-left: 0.4rem;
+    }
 
-  &__handle--facebook::before {
-    content: url(../../images/icon-facebook.svg);
-  }
+    &--facebook::before {
+      content: url(../images/icon-facebook.svg);
+    }
 
-  &__handle--twitter::before {
-    content: url(../../images/icon-twitter.svg);
-  }
+    &--twitter::before {
+      content: url(../images/icon-twitter.svg);
+    }
 
-  &__handle--instagram::before {
-    content: url(../../images/icon-instagram.svg);
-  }
+    &--instagram::before {
+      content: url(../images/icon-instagram.svg);
+    }
 
-  &__handle--youtube::before {
-    content: url(../../images/icon-youtube.svg);
+    &--youtube::before {
+      content: url(../images/icon-youtube.svg);
+    }
   }
 
   &__text {
@@ -48,54 +48,54 @@
   &__statistic {
     position: relative;
     margin-top: 1.2rem;
+
+    &::before,
+    &--negative::before {
+      position: relative;
+      content: url(../images/icon-up.svg);
+      top: -0.2rem;
+      left: -0.333rem;
+      margin-left: 0.3rem;
+    }
+
+    &--negative::before {
+      content: url(../images/icon-down.svg);
+    }
   }
 
-  &__statistic::before,
-  &__statistic--negative::before {
-    position: relative;
-    content: url(../../images/icon-up.svg);
-    top: -0.2rem;
-    left: -0.333rem;
-    margin-left: 0.3rem;
+  &--facebook::after,
+  &--twitter::after,
+  &--instagram::after,
+  &--youtube::after {
+    position: absolute;
+    top: -4px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    content: "";
+    z-index: -1;
+    border-radius: 0.333em;
   }
 
-  &__statistic--negative::before {
-    content: url(../../images/icon-down.svg);
+  &--facebook::after {
+    background: var(--facebook-color);
   }
-}
 
-.card--facebook::after,
-.card--twitter::after,
-.card--instagram::after,
-.card--youtube::after {
-  position: absolute;
-  top: -4px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  content: "";
-  z-index: -1;
-  border-radius: 0.333em;
-}
+  &--twitter::after {
+    background: var(--twitter-color);
+  }
 
-.card--facebook::after {
-  background: $facebook-color;
-}
+  &--instagram::after {
+    background: var(--instagram-color);
+  }
 
-.card--twitter::after {
-  background: $twitter-color;
-}
-
-.card--instagram::after {
-  background: $instagram-color;
-}
-
-.card--youtube::after {
-  background: $youtube-color;
+  &--youtube::after {
+    background: var(--youtube-color);
+  }
 }
 
 .card:hover {
-  background-color: lighten($dark-card-background, $amount: 5);
+  background-color: var(--hover);
 }
 
 @include screen-m {

@@ -2,10 +2,6 @@
 
 html {
   font-family: "Inter", sans-serif;
-}
-
-body {
-  color: white;
   line-height: 1.666;
 }
 
@@ -13,11 +9,12 @@ body {
   &__title {
     font-size: 1.4rem;
     letter-spacing: 0.8px;
+    color: var(--color-text);
   }
 
   &__p {
     letter-spacing: 0.8px;
-    color: $light-text;
+    color: var(--secondary-color-text);
     font-weight: 700;
     font-size: 0.8rem;
   }
@@ -35,10 +32,12 @@ body {
 
   &__handle {
     font-size: 0.8rem;
-    color: $light-text;
+    font-weight: 700;
+    color: var(--secondary-color-text);
   }
 
   &__followers-total {
+    color: var(--color-text);
     font-size: 3.333rem;
   }
 
@@ -47,17 +46,17 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 400;
-    color: $light-text;
+    color: var(--secondary-color-text);
   }
 
   &__statistic {
-    color: $green;
+    color: var(--green);
     font-weight: 700;
     font-size: 0.8rem;
   }
 
   &__statistic--negative {
-    color: $red;
+    color: var(--red);
   }
 }
 
@@ -66,11 +65,12 @@ body {
 
   &__text {
     font-size: 0.875rem;
-    font-weight: 400;
-    color: $light-text;
+    font-weight: 700;
+    color: var(--secondary-color-text);
   }
 
   &__followers-value {
+    color: var(--color-text);
     line-height: 1;
     font-size: 2rem;
     font-weight: 700;

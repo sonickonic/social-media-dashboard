@@ -1,17 +1,30 @@
 .header {
-  background-color: $dark-header-background;
+  background-color: var(--header-background);
   padding: 2rem 6.5%;
   border-radius: 0 0 1em 1em;
 }
 
+@include screen-m {
+  .header {
+    &__container {
+      width: 33.8rem;
+      margin: auto;
+    }
+  }
+}
+
 @include screen-l {
   .header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
     height: 15rem;
-    width: 69rem;
     padding: 2rem 0;
     margin: auto;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 0 auto;
+      width: 69rem;
+    }
   }
 }

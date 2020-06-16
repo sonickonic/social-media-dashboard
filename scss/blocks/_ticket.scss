@@ -9,7 +9,7 @@
     "text icon"
     "value statistic";
 
-  background-color: $dark-card-background;
+  background-color: var(--card-background);
   width: 87%;
   max-width: 20.5rem;
   margin: auto;
@@ -31,19 +31,19 @@
   }
 
   &__text--facebook::after {
-    content: url(../../images/icon-facebook.svg);
+    content: url(../images/icon-facebook.svg);
   }
 
   &__text--twitter::after {
-    content: url(../../images/icon-twitter.svg);
+    content: url(../images/icon-twitter.svg);
   }
 
   &__text--instagram::after {
-    content: url(../../images/icon-instagram.svg);
+    content: url(../images/icon-instagram.svg);
   }
 
   &__text--youtube::after {
-    content: url(../../images/icon-youtube.svg);
+    content: url(../images/icon-youtube.svg);
   }
 
   &__followers-value {
@@ -59,7 +59,7 @@
 }
 
 .ticket:hover {
-  background-color: lighten($dark-card-background, $amount: 5);
+  background-color: var(--hover);
 }
 
 @include screen-m {

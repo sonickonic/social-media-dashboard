@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,17 +25,19 @@
       }
     </style>
   </head>
-  <body>
+  <body class="body">
     <header class="header">
-      <div class="container">
-        <h1 class="header__title">Social Media Dashboard</h1>
-        <p class="header__p">Total Followers: 23,004</p>
-      </div>
-      <div class="container container--border">
-        <p class="header__p">Dark Mode</p>
+      <div class="header__container">
         <div class="container">
-          <input class="checkbox" type="checkbox" id="toggle" />
-          <label class="switch" for="toggle">Toggle</label>
+          <h1 class="header__title">Social Media Dashboard</h1>
+          <p class="header__p">Total Followers: 23,004</p>
+        </div>
+        <div class="container container--border">
+          <p class="header__p">Dark Mode</p>
+          <div class="container">
+            <input class="checkbox" type="checkbox" id="toggle" />
+            <label class="switch" for="toggle">Toggle</label>
+          </div>
         </div>
       </div>
     </header>
@@ -139,6 +141,8 @@
           >Frontend Mentor</a
         >. Coded by <a href="https://github.com/sonickonic">sonickonic</a>.
       </div>
+
+      <script src="./toggle.js"></script>
     </main>
   </body>
 </html>
